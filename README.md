@@ -25,5 +25,5 @@ The Aventail platform ([https://aventail.cyber.gc.ca/](https://aventail.cyber.gc
 2. **Run the script**: Execute the Python script, providing the path to the CSV file containing the IOCs obtained from Aventail as an argument.
 
    ```bash
-   python aventail_ioc_parser.py --file <path_to_csv>
+   python ioc-to-xdr.py --file <path_to_csv>
 
