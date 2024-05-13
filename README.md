@@ -15,8 +15,7 @@ The Aventail platform ([https://aventail.cyber.gc.ca/](https://aventail.cyber.gc
 
 ## Dependencies
 - Python 3
-- pandas (for CSV parsing)
-- requests (for HTTP requests)
+- argparse
 
 ## Usage
 
