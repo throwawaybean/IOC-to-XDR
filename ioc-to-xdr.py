@@ -81,12 +81,26 @@ config case_sensitive = false
 
 # Main function
 def main():
-    file_name = input("Enter the CSV file name: ")
-    data = process_csv(file_name)
+    # Create argument parser
+    parser = argparse.ArgumentParser(description="Process a CSV file and generate queries")
+    parser.add_argument("-f", "--file", help="Path to the CSV file", required=True)
+    args = parser.parse_args()
+
+    # Process CSV file
+    data = process_csv(args.file)
     ips_query, domains_query, urls_query = generate_queries(data)
-    print("ips_query:\n", ips_query)
-    print("\ndomains_query:\n", domains_query)
-    print("\nurls_query:\n", urls_query)
+    print("\nProcessing completed!\n")
+
+    # ANSI escape codes for colors
+    CYAN = '\033[96m'
+    WHITE = '\033[97m'
+    RESET = '\033[0m'
+
+    # Print generated queries with colored text
+    print(f"{WHITE}[{RESET}{CYAN}#{RESET}{WHITE}]{RESET} {CYAN}IPs Query:{RESET}\n{ips_query}")
+    print(f"{WHITE}[{RESET}{CYAN}#{RESET}{WHITE}]{RESET} {CYAN}Domains Query:{RESET}\n{domains_query}")
+    print(f"{WHITE}[{RESET}{CYAN}#{RESET}{WHITE}]{RESET} {CYAN}URLs Query:{RESET}\n{urls_query}")
 
 if __name__ == "__main__":
     main()
+
