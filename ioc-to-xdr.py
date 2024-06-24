@@ -1,4 +1,5 @@
 import csv
+import argparse
 from urllib.parse import urlparse
 
 # Function to clean up URL
@@ -102,5 +103,3 @@ def main():
     print(f"{WHITE}[{RESET}{CYAN}#{RESET}{WHITE}]{RESET} {CYAN}URLs Query:{RESET}\n{urls_query}")
 
 if __name__ == "__main__":
-    main()
-
